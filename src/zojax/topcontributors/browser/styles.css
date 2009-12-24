@@ -1,0 +1,33 @@
+/* zrt-cssregistry: */
+
+@media all {
+
+  .portlet-topcontributors .z-portlet-item { 
+    padding-left: 0.5em;
+    line-height: 1.4em;
+  }
+
+  .portlet-topcontributors .z-portlet-item a:hover {
+    border: none;
+    color: globalExtraColor;
+    text-decoration: underline;
+  }
+
+  .portlet-topcontributors div.t-member { 
+    margin-left: 40px;
+  }
+
+  .portlet-topcontributors div.t-avatar { 
+    float: left;
+    width: 31px;
+    text-align: center;
+  }
+
+  .portlet-topcontributors .t-avatar img {
+    padding: 2px;
+    width: 26px;
+    height: auto;
+    border: 1px solid globalBorderColor;
+  }
+
+}

@@ -1,0 +1,14 @@
+<tal:block i18n:domain="zojax.topcontributors">
+  <h2 i18n:translate="">Top contributors</h2>
+  <div class="z-page-description"></div>
+
+  <tal:block define="context nocall:view/context"
+	     content="structure provider:content.topcontributors" />
+
+  <div class="z-form-controls">
+    <hr />
+    <input type="submit" class="z-form-removebutton" 
+	   name="contributors.remove" value="Remove" />
+  </div>
+
+</tal:block>
