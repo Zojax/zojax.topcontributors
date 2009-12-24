@@ -1,0 +1,12 @@
+<div class="t-avatar" tal:condition="view/avatar">
+  <a href="#" tal:attributes="href view/profile"
+     tal:omit-tag="not:view/profile">
+    <img src="" tal:attributes="title view/author; src view/avatar" />
+  </a>
+</div>
+<div class="t-member">
+  <a tal:attributes="href view/profile" tal:content="view/author"
+     tal:omit-tag="not:view/profile"></a>
+  <div tal:repeat="widget view/widgets"
+       tal:content="structure python:view.widgets[widget].render()"></div>
+</div>

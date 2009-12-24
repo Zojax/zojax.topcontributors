@@ -1,0 +1,23 @@
+<div class="z-portlet portlet-topcontributors"
+     i18n:domain="zojax.topcontributors">
+
+  <h2 class="z-portlet-header">
+    <tal:block condition="context/label"
+	       tal:content="context/label">Portlet Header</tal:block>
+    <tal:block condition="not:context/label"
+	       tal:content="context/title">Top contributors</tal:block>
+  </h2>
+
+  <div class="z-portlet-body" tal:define="members context/listMembers">
+    <div tal:repeat="member members"
+	 tal:attributes="class python:repeat['member'].odd() and
+			 'z-portlet-item even' or 'z-portlet-item odd'">
+      <tal:block
+	 tal:content="structure member/@@pagelet/topcontributors.portlet.item" />
+      <div class="visualClear"></div>
+    </div>
+
+    <div class="z-portlet-item odd" tal:condition="not:members"
+	 i18n:translate="">There is no contributors information.</div>
+  </div>
+</div>

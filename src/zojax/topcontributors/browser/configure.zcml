@@ -1,0 +1,70 @@
+<configure 
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:i18n="http://namespaces.zope.org/i18n"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   i18n_domain="zojax.topcontributors">
+
+  <!-- edit content step -->
+  <zojax:pagelet
+     name="topcontributors"
+     title="Top Contributors"
+     type="wizard.step"
+     for="..interfaces.ITopContributorsAware
+	  zojax.content.forms.interfaces.IEditContentWizard"
+     template="edit.pt"
+     class=".edit.TopContributors"
+     weight="999998" />
+
+  <adapter
+     name="content.topcontributors"
+     provides="zope.contentprovider.interfaces.IContentProvider"
+     factory=".edit.ContributorsTable" />
+
+  <!-- table -->
+  <adapter
+     name="content.topcontributors"
+     provides="zope.contentprovider.interfaces.IContentProvider"
+     factory=".table.ContributorsTable" />
+
+  <adapter
+     name="id"
+     factory=".table.IdColumn" />
+
+  <adapter
+     name="member"
+     factory=".table.MemberColumn" />
+
+  <adapter
+     name="score"
+     factory=".table.ScoreColumn" />
+
+  <!-- portlet -->
+  <zojax:portlet
+     title="Top contributors"
+     name="portlet.topcontributors"
+     description="Top contributors for content."
+     class=".portlet.TopContributorsPortlet"
+     schema=".interfaces.ITopContributorsPortlet" />
+
+  <zojax:pagelet
+     type="portlet.view"
+     template="portlet.pt"
+     for=".interfaces.ITopContributorsPortlet" />
+
+  <zojax:pageletType
+     name="topcontributors.portlet.item"
+     interface=".interfaces.ITopContributorsPortletItem" />
+
+  <zojax:pagelet
+     type="topcontributors.portlet.item"
+     for="zope.security.interfaces.IPrincipal"
+     template="portletitem.pt" 
+     class=".portlet.PrincipalView" />
+
+  <!-- styles -->
+  <zojax:resourceinclude
+     name="zojax-topcontributors.css"
+     library="zojax"
+     type="stylesheet" file="styles.css" filetype="zrt" />
+
+</configure>

@@ -1,0 +1,113 @@
+==========================
+Top Contributors Extension
+==========================
+
+    >>> from zope import interface
+    >>> from zope.interface import verify
+    >>> from zope.app.component.hooks import setSite
+    >>> from zojax.topcontributors.interfaces import ITopContributors
+    >>> from zojax.topcontributors.interfaces import ITopContributorsAware
+    >>> from zojax.topcontributors.contributors import TopContributors
+
+    >>> root = getRootFolder()
+    >>> setSite(root)
+    >>> sm = root.getSiteManager()
+
+    >>> verify.verifyClass(ITopContributors, TopContributors)
+    True
+
+    >>> ITopContributors(root, None) is None
+    True
+
+    >>> interface.directlyProvides(root, ITopContributorsAware)
+
+    >>> contributors = ITopContributors(root)
+    >>> isinstance(contributors, TopContributors)
+    True
+
+    >>> verify.verifyObject(ITopContributors, contributors)
+    True
+
+    >>> len(contributors)
+    0
+
+    >>> list(contributors)
+    []
+
+    >>> contributors[0]
+    Traceback (most recent call last):
+    ...
+    IndexError: -1
+
+    >>> contributors.contribute('user1', 1)
+    >>> contributors.contribute('user2', 2)
+
+    >>> len(contributors)
+    2
+    >>> list(contributors)
+    [(2, 'user2'), (1, 'user1')]
+    >>> contributors[0], contributors[1]
+    ((2, 'user2'), (1, 'user1'))
+
+    >>> contributors.contribute('user1', 5)
+
+    >>> len(contributors)
+    2
+    >>> list(contributors)
+    [(6, 'user1'), (2, 'user2')]
+    >>> contributors[0], contributors[1]
+    ((6, 'user1'), (2, 'user2'))
+
+    >>> contributors.contribute('user3', 5)
+
+    >>> len(contributors)
+    3
+    >>> list(contributors)
+    [(6, 'user1'), (5, 'user3'), (2, 'user2')]
+
+    >>> contributors[:1]
+    [(6, 'user1')]
+
+    >>> contributors[1:1]
+    []
+
+    >>> contributors[2:1]
+    []
+
+    >>> contributors[-10:1]
+    [(6, 'user1')]
+
+    >>> contributors[:10]
+    [(6, 'user1'), (5, 'user3'), (2, 'user2')]
+
+    >>> contributors[1:2]
+    [(5, 'user3')]
+
+    >>> contributors[1:20]
+    [(5, 'user3'), (2, 'user2')]
+
+    >>> contributors[20:100]
+    []
+
+    >>> contributors.remove('user2')
+
+    >>> len(contributors)
+    2
+    >>> list(contributors)
+    [(6, 'user1'), (5, 'user3')]
+
+    >>> contributors.remove('user1')
+    >>> contributors.remove('user3')
+
+    >>> len(contributors)
+    0
+    >>> list(contributors)
+    []
+    >>> contributors[1:]
+    []
+    >>> contributors[:3]
+    []
+    >>> contributors[100:200]
+    []
+
+    >>> setSite(None)
