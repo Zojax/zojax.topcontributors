@@ -8,6 +8,7 @@
   <div class="z-form-controls">
     <hr />
     <input type="submit" class="z-form-removebutton" 
+           i18n:attributes="value"
 	   name="contributors.remove" value="Remove" />
   </div>
 
