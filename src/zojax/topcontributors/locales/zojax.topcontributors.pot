@@ -1,0 +1,78 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: Development/Unknown\n"
+"POT-Creation-Date: Thu Dec  8 23:30:13 2011\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+
+#: src/zojax/topcontributors/browser/edit.pt:10
+msgid "Remove"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/edit.py:39
+msgid "Please select members to remove."
+msgstr ""
+
+#: src/zojax/topcontributors/browser/edit.py:44
+msgid "Members have been removed."
+msgstr ""
+
+#: src/zojax/topcontributors/browser/interfaces.py:30
+msgid "Label"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/interfaces.py:34
+msgid "Number of members"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/interfaces.py:35
+msgid "Number of members to display"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/interfaces.py:40
+msgid "Profile fields"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/interfaces.py:41
+msgid "List of profile fields to show in portlet."
+msgstr ""
+
+#: src/zojax/topcontributors/browser/portlet.pt:20
+msgid "There is no contributors information."
+msgstr ""
+
+#: src/zojax/topcontributors/browser/table.py:38
+#: src/zojax/topcontributors/browser/edit.pt:2
+msgid "Top contributors"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/table.py:42
+msgid "No contributors information."
+msgstr ""
+
+#: src/zojax/topcontributors/browser/table.py:68
+msgid "Member"
+msgstr ""
+
+#: src/zojax/topcontributors/browser/table.py:99
+msgid "Score"
+msgstr ""
+
